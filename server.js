@@ -11,10 +11,12 @@ const publicPath = "public";
 
 app.use(express.static(publicPath));
 
-app.use((req, res) => {
-    res.status(404);
-    res.sendFile(join(__dirname, publicPath, "404.html"));
-});
+/* Uncomment to add a custom 404 page:
+    app.use((req, res) => {
+        res.status(404);
+        res.sendFile(join(__dirname, publicPath, "404.html"));
+    });
+*/
 
 const server = createServer();
 
@@ -49,7 +51,6 @@ server.on("listening", () => {
     );
 });
 
-// https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 

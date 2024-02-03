@@ -1,19 +1,19 @@
 self.__dynamic$config = {
-    prefix: "/service/",
+    prefix: "/p/",
     encoding: "xor",
     mode: "production",
     logLevel: 3,
     bare: {
         version: 2,
-        path: "https://crystalnetwork.me/bare/",
+        path: "/bare/", // if you are using a static host, change to a online/free bare server, like this:  path: "https://example.bare.server/bare/"
     },
     tab: {
-        title: "Service",
+        title: "Your Project Name", // kinda obvious, but change to your project name
         icon: null,
         ua: null,
     },
     assets: {
-        prefix: "/dynamic/",
+        prefix: "/dyn/",
         files: {
             handler: "dynamic.handler.js",
             client: "dynamic.client.js",
@@ -21,7 +21,10 @@ self.__dynamic$config = {
             config: "dynamic.config.js",
             inject: null,
         },
-    },
+    } // if you want to add the block list, add a comma at the end of the curly bracket, and paste the block thing written below
+};
+
+/* You can add a block list for urls, add sites you dont want people accessing, this is a list of ad providers as an example:
     block: [
         "trk.pinterest.com",
         "widgets.pinterest.com",
@@ -125,4 +128,4 @@ self.__dynamic$config = {
         "static.ads-twitter.com",
         "ads-api.twitter.com",
     ]
-};
+*/

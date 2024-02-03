@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "@tomphttp/bare-server-node": "^2.0.1",
-    "@vercel/analytics": "^1.1.1",
     "express": "^4.18.2",
     "@dynamic-pkg/mime": "^1.0.1",
     "@dynamic-pkg/mutation": "^1.0.0",

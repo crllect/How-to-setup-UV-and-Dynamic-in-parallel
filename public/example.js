@@ -1,23 +1,25 @@
+let isUVEnabledByDefault = true;
+
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("toggleUVEnabled");
 
     toggleButton.addEventListener("click", function () {
-        let UVEnabled = JSON.parse(localStorage.getItem("UVEnabled")) || false;
+        let UVEnabled = JSON.parse(localStorage.getItem("UVEnabled")) || isUVEnabledByDefault;
 
         UVEnabled = !UVEnabled;
 
         toggleButton.textContent = UVEnabled
-            ? "Dynamic: OFF"
-            : "Dynamic: ON";
+            ? "Dynamic: OFF, UV: ON"
+            : "Dynamic: ON, UV: OFF";
 
         localStorage.setItem("UVEnabled", JSON.stringify(UVEnabled));
     });
 
     let initialUVEnabled =
-        JSON.parse(localStorage.getItem("UVEnabled")) || false;
+        JSON.parse(localStorage.getItem("UVEnabled")) || isUVEnabledByDefault;
     toggleButton.textContent = initialUVEnabled
-        ? "Dynamic: OFF"
-        : "Dynamic: ON";
+        ? "Dynamic: OFF, UV: ON"
+        : "Dynamic: ON, UV: OFF";
 });
 
 document // makes it so you can press enter to submit as opposed to just being able to press a button
@@ -60,4 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-let UVEnabled = JSON.parse(localStorage.getItem("UVEnabled")) || false;
+let UVEnabled = JSON.parse(localStorage.getItem("UVEnabled")) || isUVEnabledByDefault;
