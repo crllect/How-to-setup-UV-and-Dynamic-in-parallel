@@ -1,12 +1,12 @@
-importScripts("/dyn/dynamic.config.js");
-importScripts("/dyn/dynamic.worker.js");
+importScripts("/dynamic/dynamic.config.js");
+importScripts("/dynamic/dynamic.worker.js");
 
 importScripts("/uv/uv.bundle.js");
 importScripts("/uv/uv.config.js");
 importScripts(__uv$config.sw || "/uv/uv.sw.js");
 
 const sw = new UVServiceWorker();
-const dynamic = new Dynamic();
+const dynamic = new dynamic();
 
 self.dynamic = dynamic;
 

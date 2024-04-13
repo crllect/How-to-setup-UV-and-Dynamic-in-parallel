@@ -4,7 +4,8 @@
         <!-- UV things -->
         <script src="/uv/uv.bundle.js"></script>
         <script src="/uv/uv.config.js"></script>
-        <script src="/dyn/dynamic.config.js"></script>
+        <!-- added defer as before the script would load before the form would load -->
+        <script src="/dynamic/dynamic.config.js"></script>
 
         <script>
             if ("serviceWorker" in navigator) {
@@ -16,14 +17,24 @@
             }
         </script>
 
-        <link rel="stylesheet" href="example.css"> <!-- Import a css file so it looks readable. I am intentionally keeping everything to a bare minimum so that you can read and understand everything without much confusion -->
+        <link rel="stylesheet" href="example.css" />
     </head>
     <body>
-        <button id="toggleUVEnabled" style="position: absolute; top:1em; left: 1em; z-index:999999999999999;">Toggle Dynamic</button> <!-- Toggle UV or Dynamic -->
-        <input type="text" id="urlInput" placeholder="Enter URL here"> <!-- Your Search bar, add the urlInput id -->
-        <button id="searchButton">Search Text</button> <!-- The search button, make sure to have the searchButton id -->
+        <button
+            id="toggleUVEnabled"
+            style="
+                position: absolute;
+                top: 1em;
+                left: 1em;
+                z-index: 999999999999999;
+            "
+        >
+            Toggle Dynamic
+        </button>
+        <input type="text" id="urlInput" placeholder="Enter URL here" />
+        <button id="searchButton">Search Text</button>
 
-        <iframe id="iframeWindow" class="iframeWindow"></iframe> <!-- If you are embedding the proxy, add an iframe with the specified id and class, or just use this one -->
+        <iframe id="iframeWindow" class="iframeWindow"></iframe>
     </body>
-    <script src="example.js"></script> <!-- Import the proxy js script -->
+    <script src="example.js"></script>
 </html>
